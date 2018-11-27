@@ -86,7 +86,7 @@ body {
 
 .media-object:hover {
   cursor: pointer;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .5);
+  box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, .5);
 }
 
 h5 {

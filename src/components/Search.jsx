@@ -4,14 +4,13 @@ import YOUTUBE_API_KEY from '../config/youtube.js';
 var Search = (props) => {
     
   var options = {
-    maxResults: 10,
-    key: YOUTUBE_API_KEY,
-    part: 'snippet'
+    max: 10,
+    key: YOUTUBE_API_KEY
   };
     
   var callSearchYouTube = () => {
-    options.q = document.getElementById('searchYT').value;
-    searchYouTube(event, options, props.clickHandler);
+    options.query = document.getElementById('searchYT').value;
+    searchYouTube(options, props.clickHandler);
   };
   
   var enterHandler = (event) => {

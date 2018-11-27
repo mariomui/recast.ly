@@ -18,9 +18,9 @@ class App extends React.Component {
     });
   }
   
-  onSearchClick(videoArray) {
+  onSearchClick(videoObject) {
     this.setState({
-      videos: videoArray.items
+      videos: videoObject.items
     });
   }
   
