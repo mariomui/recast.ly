@@ -1,6 +1,7 @@
 import exampleVideoData from '../data/exampleVideoData.js';
 import VideoPlayer from './VideoPlayer.js';
 import VideoList from './VideoList.js';
+import Search from './Search.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,14 +17,23 @@ class App extends React.Component {
       currentVideo: video
     });
   }
-
+  
+  onSearchClick(videoArray) {
+    this.setState({
+      videos: videoArray.items
+    });
+  }
+  
   render() {
     let boundClickHandler = this.onVideoClick.bind(this);
+    let boundSearchHandler = this.onSearchClick.bind(this);
     return (
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div><h5><em>search</em> view goes here</h5></div>
+            <div>
+              <Search clickHandler={boundSearchHandler}/>
+            </div>
           </div>
         </nav>
         <div className="row">
