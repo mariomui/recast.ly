@@ -3,4 +3,4 @@ import VideoList from './components/VideoList.js';
 import exampleVideoData from './data/exampleVideoData.js';
 
 ReactDOM.render(<App />, document.getElementById('app'));
-ReactDOM.render(<VideoList videos={exampleVideoData}/>, document.getElementsByClassName('videoList')[0]);
+ReactDOM.render(<VideoList videos={exampleVideoData}/>, document.getElementById('videoList'));
