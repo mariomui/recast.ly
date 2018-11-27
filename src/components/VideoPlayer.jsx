@@ -1,5 +1,5 @@
 var VideoPlayer = (props) => {
-  
+
   console.log(props.video, 'videoplayer act'); 
 
   return (<div className="video-player">
@@ -10,7 +10,7 @@ var VideoPlayer = (props) => {
       <h3>Video Title</h3>
       <div>Video Description</div>
     </div>
-  </div>)
+  </div>);
 };
 
 // PropTypes tell other developers what `props` a component expects
