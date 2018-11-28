@@ -4,7 +4,7 @@ import YOUTUBE_API_KEY from '../config/youtube.js';
 var Search = (props) => {
     
   var options = {
-    max: 10,
+    max: 5,
     key: YOUTUBE_API_KEY
   };
     

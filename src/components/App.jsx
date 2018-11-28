@@ -2,13 +2,30 @@ import exampleVideoData from '../data/exampleVideoData.js';
 import VideoPlayer from './VideoPlayer.js';
 import VideoList from './VideoList.js';
 import Search from './Search.js';
+import searchYouTube from '../lib/searchYouTube.js';
+import YOUTUBE_API_KEY from '../config/youtube.js';
+
+var dummyVideo = {
+  id: {
+    videoId: 'Dummy Video ID'
+  },
+  snippet: {
+    title: 'Dummy Title',
+    description: 'Dummy Description',
+    thumbnails: {
+      default: {
+        url: 'Dummy URL'
+      }
+    }
+  }
+};
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      videos: exampleVideoData,
-      currentVideo: exampleVideoData[0]
+      videos: [dummyVideo],
+      currentVideo: dummyVideo
     };
   }
 
@@ -22,6 +39,21 @@ class App extends React.Component {
     this.setState({
       videos: videoObject.items
     });
+  }
+  
+  componentDidMount() {
+    var options = {
+      query: '', // empty query will display popular YT videos
+      max: 5,
+      key: YOUTUBE_API_KEY
+    };
+    
+    searchYouTube(options, (data) => {
+      this.setState({
+        videos: data.items,
+        currentVideo: data.items[0]
+      });
+    }); 
   }
   
   render() {
