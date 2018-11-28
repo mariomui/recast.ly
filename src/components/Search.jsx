@@ -12,7 +12,7 @@ var Search = (props) => {
     options.query = document.getElementById('searchYT').value;
     searchYouTube(options, props.clickHandler);
   };
-  
+   
   var keyDownHandler = (event) => {
     // if the last key pressed was backspace, do nothing
     if (event.keyCode === 8) {
