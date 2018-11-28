@@ -1,4 +1,3 @@
-import exampleVideoData from '../data/exampleVideoData.js';
 import VideoPlayer from './VideoPlayer.js';
 import VideoList from './VideoList.js';
 import Search from './Search.js';
@@ -14,7 +13,7 @@ var dummyVideo = {
     description: 'Dummy Description',
     thumbnails: {
       default: {
-        url: 'Dummy URL'
+        url: 'http://hackreactor.com'
       }
     }
   }
@@ -37,13 +36,14 @@ class App extends React.Component {
   
   onSearchClick(videoObject) {
     this.setState({
-      videos: videoObject.items
+      videos: videoObject.items,
+      currentVideo: videoObject.items[0]
     });
   }
   
   componentDidMount() {
     var options = {
-      query: '', // empty query will display popular YT videos
+      query: 'turtles', 
       max: 5,
       key: YOUTUBE_API_KEY
     };

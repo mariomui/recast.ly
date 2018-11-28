@@ -13,15 +13,13 @@ var Search = (props) => {
     searchYouTube(options, props.clickHandler);
   };
   
-  var enterHandler = (event) => {
-    if (event.keyCode === 13) {
-      callSearchYouTube();
-    }
+  var keyDownHandler = (event) => {
+    setTimeout(callSearchYouTube, 500);
   };
   
   return (
     <div className="search-bar form-inline">
-      <input onKeyDown={enterHandler} className="form-control" type="text" id="searchYT"/>
+      <input onKeyDown={keyDownHandler} className="form-control" type="text" id="searchYT"/>
       <button onClick={callSearchYouTube} className="btn hidden-sm-down">
         <span className="glyphicon glyphicon-search"></span>
       </button>

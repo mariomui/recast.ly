@@ -10,9 +10,9 @@ var searchYouTube = (options, successCB) => {
       type: 'video', 
       videoEmbeddable: 'true'
     },
-    success: successCB,
     contentType: "application/json",
     dataType: "json",
+    success: successCB,
     error: function(error) {
       console.error('Failed to fetch videos', error);
     }
