@@ -13,7 +13,7 @@ var dummyVideo = {
     description: 'Dummy Description',
     thumbnails: {
       default: {
-        url: 'http://hackreactor.com'
+        url: ''
       }
     }
   }
