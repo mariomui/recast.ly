@@ -44,7 +44,7 @@ class App extends React.Component {
   componentDidMount() {
     var options = {
       query: 'turtles', 
-      max: 5,
+      max: 6,
       key: YOUTUBE_API_KEY
     };
     

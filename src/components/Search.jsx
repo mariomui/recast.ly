@@ -4,7 +4,7 @@ import YOUTUBE_API_KEY from '../config/youtube.js';
 var Search = (props) => {
     
   var options = {
-    max: 5,
+    max: 6,
     key: YOUTUBE_API_KEY
   };
     
@@ -14,6 +14,10 @@ var Search = (props) => {
   };
   
   var keyDownHandler = (event) => {
+    // if the last key pressed was backspace, do nothing
+    if (event.keyCode === 8) {
+      return;
+    }
     setTimeout(callSearchYouTube, 500);
   };
   
